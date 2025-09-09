@@ -3,7 +3,7 @@ public class CeilingOfANumber {
 
     public static void main(String[] args) {
         int[] arr = {1, 4, 5, 7, 8, 9, 12, 34, 56, 88, 102};
-        int target = 101;
+        int target = 10;
         System.out.println(findCeiling(arr, target));
     }
 
