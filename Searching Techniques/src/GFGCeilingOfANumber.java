@@ -1,7 +1,7 @@
 public class GFGCeilingOfANumber {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 8, 10, 11, 12, 19};
-        int target = 5;
+        int[] arr = {1,1,4,4,4,4,10,10};
+        int target = 1;
         System.out.println(findCeiling(arr, target));
     }
     static int findCeiling(int[] arr, int target){
