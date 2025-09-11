@@ -7,7 +7,7 @@ public class CeilingOfANumber {
         System.out.println(findCeiling(arr, target));
     }
 
-    public static int findCeiling(int[] arr, int target) {
+    static int findCeiling(int[] arr, int target) {
         int low = 0;
         int high = arr.length - 1;
         int mid = 0;
