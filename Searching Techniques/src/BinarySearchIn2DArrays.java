@@ -9,7 +9,7 @@ public class BinarySearchIn2DArrays {
             {28, 29, 37, 49},
             {33, 34, 38, 50}
         };
-        int target = 37;
+        int target = 49;
         System.out.println(Arrays.toString(binarySearchInMatrix(arr, target)));
     }
 
@@ -21,7 +21,7 @@ public class BinarySearchIn2DArrays {
             if (target == matrix[row][col]) {
                 return new int[]{row, col};
             }
-            if (matrix[row][col] > target) {
+            else if (matrix[row][col] > target) {
                 col--;
             } else {
                 row++;
