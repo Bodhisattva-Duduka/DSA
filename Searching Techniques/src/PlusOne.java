@@ -9,8 +9,8 @@ public class PlusOne {
             return digits;
         } else {
             for (int i = digits.length - 2; i >= 0; i--) {
-                if (digits[digits.length - 1] != 9) {
-                    digits[digits.length - 1] = digits[digits.length - 1] + 1;
+                if (digits[i] != 9) {
+                    digits[i] = digits[digits.length - 1] + 1;
                     return digits;
                 } else {
                     digits[i] = 0;
@@ -18,6 +18,7 @@ public class PlusOne {
             }
         }
         return new int[]{-1};
+        
     }
 
     public static void main(String[] args) {
