@@ -1,44 +1,43 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FindAllNumbersDisappearedInAnArray {
+
     public static void main(String[] args) {
-        int[] arr = {4,3,2,7,8,2,3,1};
+        int[] arr = {4, 3, 2, 7, 8, 2, 3, 1};
         //{1,2,3,4,2,3,7,8}
-        System.out.println(findDisappearedNumbers(arr));
+        FindAllNumbersDisappearedInAnArray obj = new FindAllNumbersDisappearedInAnArray();
+        System.out.println(obj.findDisappearedNumbers(arr));
     }
 
-    public static List<Integer> findDisappearedNumbers(int[] nums) {
-        List<Integer> arr = new ArrayList<>();
-        for (int num : nums) {
-            arr.add(num);
-        }
+    public List<Integer> findDisappearedNumbers(int[] nums) {
         int i = 0;
-        while(i<arr.size()){
-            int correct = arr.get(i)- 1;
-            if(arr.get(i) != correct){
-                swap(arr, i, correct);
-            }
-            else {
+        while (i < nums.length) {
+            int correct = nums[i] - 1;
+            if (nums[i] != correct) {
+                swap(nums, i, correct);
+            } else {
                 i++;
             }
-            if (arr.get(i) == arr.get(correct)){
+            if (nums[i] == nums[correct]) {
                 i++;
             }
         }
-        for (int j = 0; j < arr.size(); j++) {
-            int correct = arr.get(i) - 1;
-            if (arr.get(j) != correct){
-                
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        for (int j = 0; j < nums.length; j++) {
+            int value = j + 1;
+            if (nums[j] != value) {
+                arr.add(value);
             }
-            
         }
         return arr;
     }
 
-    static void swap(List<Integer> arr, int first, int second){
-        int temp = arr.get(first);
-        arr.set(first, arr.get(second));
-        arr.set(second, temp);
+    static void swap(int[] nums, int first, int second) {
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
     }
 }
