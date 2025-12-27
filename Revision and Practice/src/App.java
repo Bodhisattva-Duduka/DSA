@@ -1,9 +1,12 @@
+import java.util.Arrays;
 
 public class App {
 
     public static void main(String[] args) {
         int[] arr = {12, 345, 2, 6, 7896};
-        System.out.println(findNumberWithEvenNoOfDigits(arr));
+        int[] nums = {5,7,7,8,8,8,8,8,8,8,8,10};
+        System.out.println(Arrays.toString(findRange(nums, 8)));
+        // System.out.println(findNumberWithEvenNoOfDigits(arr));
     }
 
     // leetcode 1295
@@ -38,5 +41,50 @@ public class App {
             }
         }
         return arr[low];
+    }
+
+    // {5,7,7,8,8,8,8,8,8,8,10}
+    //  0 1 2 3 4 5 6 7 8 9 10
+    public static int[] findRange(int[] arr, int target){
+        int low = 0;
+        int high = arr.length - 1;
+        int lowerIndex ;
+        int higherIndex ;
+        // find lower index
+        boolean bool = true;
+        while(low<=high){
+            int mid = (low + high) / 2;
+            if (target == arr[mid]){
+                high = mid - 1;
+                bool = false;
+            }
+            else if (target>arr[mid]){
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+        if (bool){
+            return new int[] {-1,-1};
+        }
+        lowerIndex = low;
+        // find higher index
+        low = 0;
+        high = arr.length - 1;
+        while(low<=high){
+            int mid = (low + high) / 2;
+            if (target == arr[mid]){
+                low = mid + 1;
+            }
+            else if (target>arr[mid]){
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+        higherIndex = high;
+        return new int[] {lowerIndex, higherIndex};
     }
 }
