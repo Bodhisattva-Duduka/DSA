@@ -19,4 +19,24 @@ public class App {
         return count;
     }
 
+    public static char findSmallestLetterGreaterThanTarget(char[] arr, char target){
+        int low = 0;
+        int high = arr.length - 1;
+        if (target>=arr[arr.length - 1]){
+            return arr[0];
+        }
+        while(low<=high){
+            int mid = (low + high)/2;
+            if (target == arr[mid]){
+                low = mid + 1;
+            }
+            else if (target>arr[mid]){
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+        return arr[low];
+    }
 }
