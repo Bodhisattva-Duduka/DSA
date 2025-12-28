@@ -87,4 +87,56 @@ public class App {
         higherIndex = high;
         return new int[] {lowerIndex, higherIndex};
     }
+
+    public static int searchInRotatedArray(int[] arr, int target){
+        int pivot = findPivot(arr);
+        if (pivot == -1){
+            return binarySearch(arr, target, 0, arr.length - 1);
+        }
+        if (arr[pivot] == target){
+            return pivot;
+        }
+        if (arr[0]<=pivot){
+            return binarySearch(arr, target, 0, pivot - 1);
+        }
+        return binarySearch(arr, target, pivot+1, arr.length-1);
+    }
+
+    public static int findPivot(int[] arr){
+        int low = 0;
+        int high = arr.length - 1;
+        while(low<=high){
+            int mid = (low + high)/2;
+            if(mid<high && arr[mid]>arr[mid+1]){
+                return mid;
+            }
+            if(low<mid && arr[mid-1]>arr[mid]){
+                return mid - 1;
+            }
+            if(arr[low]<arr[mid]){
+                low = mid + 1;
+            }
+            else{
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int binarySearch(int[] arr, int target, int low , int high){
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2; // safer midpoint
+            int midValue = arr[mid];
+
+            if (target == midValue) {
+                return mid; // found
+            } else if (target > midValue) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return -1; // not found
+    }
 }
