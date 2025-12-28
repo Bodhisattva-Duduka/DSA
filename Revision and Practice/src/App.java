@@ -5,7 +5,10 @@ public class App {
     public static void main(String[] args) {
         int[] arr = {12, 345, 2, 6, 7896};
         int[] nums = {5,7,7,8,8,8,8,8,8,8,8,10};
-        System.out.println(Arrays.toString(findRange(nums, 8)));
+        int[] arr2 = {5, 3, 4, 2, 1};
+        cyclicSort(arr2);
+        System.out.println(Arrays.toString(arr2));
+        // System.out.println(Arrays.toString(findRange(nums, 8)));
         // System.out.println(findNumberWithEvenNoOfDigits(arr));
     }
 
@@ -138,5 +141,25 @@ public class App {
             }
         }
         return -1; // not found
+    }
+
+    public static void cyclicSort(int[] arr){
+        int i = 0;
+        int correct ;
+        while(i<arr.length){
+            correct = arr[i] - 1;
+            if(arr[i] != arr[correct]){
+                swap(arr, i, correct);
+            }
+            else{
+                i++;
+            }
+        }
+    }
+    
+    public static void swap(int[] arr, int x, int y){
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
     }
 }
