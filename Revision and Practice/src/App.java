@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
 
@@ -6,8 +7,11 @@ public class App {
         int[] arr = {12, 345, 2, 6, 7896};
         int[] nums = {5,7,7,8,8,8,8,8,8,8,8,10};
         int[] arr2 = {5, 3, 4, 2, 1};
+        int[] nums2 = {4,3,2,7,8,2,3,1};
+        App obj = new App();
+        System.out.println((obj.findDisappearedNumbers(nums2)));
         cyclicSort(arr2);
-        System.out.println(Arrays.toString(arr2));
+        // System.out.println(Arrays.toString(arr2));
         // System.out.println(Arrays.toString(findRange(nums, 8)));
         // System.out.println(findNumberWithEvenNoOfDigits(arr));
     }
@@ -161,5 +165,34 @@ public class App {
         int temp = arr[x];
         arr[x] = arr[y];
         arr[y] = temp;
+    }
+
+    // leetcode 448
+    
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            int correct = nums[i] - 1;
+            if (nums[i] != nums[correct]) {
+                swap2(nums, i, correct);
+            } else {
+                i++;
+            }
+        }
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        for (int j = 0; j < nums.length; j++) {
+            int value = j + 1;
+            if (nums[j] != value) {
+                arr.add(value);
+            }
+        }
+        return arr;
+    }
+
+    static void swap2(int[] nums, int first, int second) {
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
     }
 }
