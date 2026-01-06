@@ -6,35 +6,6 @@ public class FruitsIntoBaskets {
         System.out.println(obj.totalFruit(fruits));
     }
     public int totalFruit(int[] fruits) {
-        int left = 0;
-        int right = 0;
-        int fruitCount = 0;
-        int maxFruitCount = 0;
-        int firstFruit = fruits[0];
-        int secondFruit = -1;
-        int distinctFruitCounter = 1;
-        while(right<fruits.length){
-            if(firstFruit != fruits[right] && distinctFruitCounter<=2){
-                if(secondFruit == fruits[right]){
-                    distinctFruitCounter--;
-                }
-                secondFruit = fruits[right];
-                distinctFruitCounter++;
-            }
-            while(distinctFruitCounter>2){
-                if(firstFruit != fruits[left]){
-                    distinctFruitCounter--;
-                    firstFruit = fruits[left];
-                    left--;
-                    fruitCount++;
-                }
-                left++;
-                fruitCount--;
-            }
-            fruitCount++;
-            right++;
-            maxFruitCount = Math.max(fruitCount, maxFruitCount);
-        }
-        return maxFruitCount;
+        
     }
 }
