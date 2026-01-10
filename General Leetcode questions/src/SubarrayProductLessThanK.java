@@ -1,7 +1,7 @@
 public class SubarrayProductLessThanK {
     public static void main(String[] args) {
-        int[] nums = {1,1,1};
-        int k = 1;
+        int[] nums = {10,5,2,6};
+        int k = 100;
         SubarrayProductLessThanK obj = new SubarrayProductLessThanK();
         System.out.println(obj.numSubarrayProductLessThanK(nums, k));
     }
@@ -9,30 +9,18 @@ public class SubarrayProductLessThanK {
         if(k == 0){
             return 0;
         }
-        int productWindow = 1;
         int left = 0;
         int right = 0;
+        int product = 1;
         int subArrayCount = 0;
         while(right<nums.length){
-            if(productWindow<k){
-                productWindow*=nums[right];
-                if(productWindow<k){
-                    subArrayCount++;
-                }
-            }
-            while(productWindow>=k){
-                productWindow/=nums[left];
+            product *= nums[right];
+            while(product>=k && left<=right){
+                product /= nums[left];
                 left++;
-                if(productWindow<k){
-                    subArrayCount++;
-                }
             }
+            subArrayCount += (right - left + 1);
             right++;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if(nums[i]<k){
-                subArrayCount++;
-            }
         }
         return subArrayCount;
     }
