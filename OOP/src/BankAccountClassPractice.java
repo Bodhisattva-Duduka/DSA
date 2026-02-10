@@ -26,6 +26,21 @@ public class BankAccountClassPractice{
         BankAccount rohan = new BankAccount(444);
         System.out.println(rohan.balance);
 
+        // Task 4:
+        BankAccount arjun = new BankAccount(550, 3000);
+        System.out.println(arjun.balance);
+
+        // output :
+        // Account created from main constructor
+        // 3000.0
+
+        BankAccount manav = new BankAccount(738);
+        System.out.println(manav.balance);
+
+        // output :
+        // Account created from main constructor
+        // Account created from second constructor
+        // 0.0
 
     }
 }
@@ -49,15 +64,18 @@ class BankAccount {
         if(balance<0){
             this.balance = 0;
             this.accountNumber = accountNumber;
+            System.out.println("Account created from main constructor");
         }
         else {
             this.accountNumber = accountNumber;
             this.balance = balance;
+            System.out.println("Account created from main constructor");
         }
     }
 
     BankAccount(int accountNumber){
         this(accountNumber, 0);
+        System.out.println("Account created from second constructor");
     }
 }
 
@@ -92,5 +110,17 @@ class BankAccount {
 // Rules:
 //      First constructor should call the second using this(...)
 //      Default balance = 0
+
+// ----------------------------------------------------
+
+// Task 4: Constructor Execution Order
+
+// Add:
+// System.out.println("Account created");
+
+// Answer:
+
+//      How many times is it printed?
+//      Why?
 
 // ----------------------------------------------------
