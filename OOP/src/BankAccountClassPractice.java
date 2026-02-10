@@ -21,6 +21,12 @@ public class BankAccountClassPractice{
         // Task 2:
         BankAccount kunal = new BankAccount(130, -400);
         System.out.println(kunal.balance);
+
+        // Task 3:
+        BankAccount rohan = new BankAccount(444);
+        System.out.println(rohan.balance);
+
+
     }
 }
 class BankAccount {
@@ -49,6 +55,10 @@ class BankAccount {
             this.balance = balance;
         }
     }
+
+    BankAccount(int accountNumber){
+        this(accountNumber, 0);
+    }
 }
 
 // Task 1: Parameterized Constructor
@@ -70,5 +80,17 @@ class BankAccount {
 // Requirement:
 
 // If initialBalance < 0 → set balance to 0
+
+// ---------------------------------------------------
+
+// Task 3: Multiple Constructors
+
+// Support:
+//      BankAccount(int accNo)
+//      BankAccount(int accNo, double balance)
+
+// Rules:
+//      First constructor should call the second using this(...)
+//      Default balance = 0
 
 // ----------------------------------------------------
