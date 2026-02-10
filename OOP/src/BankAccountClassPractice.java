@@ -18,7 +18,9 @@ public class BankAccountClassPractice{
         System.out.println(bodhisattva.balance);
         System.out.println(rahul.balance);
 
-        
+        // Task 2:
+        BankAccount kunal = new BankAccount(130, -400);
+        System.out.println(kunal.balance);
     }
 }
 class BankAccount {
@@ -38,8 +40,14 @@ class BankAccount {
     }
 
     BankAccount(int accountNumber, double balance){
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+        if(balance<0){
+            this.balance = 0;
+            this.accountNumber = accountNumber;
+        }
+        else {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+        }
     }
 }
 
@@ -57,3 +65,10 @@ class BankAccount {
 
 // ----------------------------------------------------
 
+// Task 2: Constructor Validation (IMPORTANT)
+
+// Requirement:
+
+// If initialBalance < 0 → set balance to 0
+
+// ----------------------------------------------------
