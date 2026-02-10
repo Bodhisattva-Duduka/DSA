@@ -18,6 +18,10 @@ public class ConstructersInJava {
         System.out.println(kunal.roll);
         System.out.println(kunal.marks);
         System.out.println(kunal.name);
+        StudentDetails kunalkushwaha = new StudentDetails();
+        System.out.println(kunalkushwaha.roll);
+        System.out.println(kunalkushwaha.name);
+        System.out.println(kunalkushwaha.marks);
     }
 }
 class StudentDetails {
@@ -50,4 +54,10 @@ class StudentDetails {
         this.marks = otherObject.marks;
     }
 
+
+    // Constructor chaining
+
+    StudentDetails(){
+        this(13, "Kunal", 93.4);
+    }
 }
