@@ -6,7 +6,7 @@ public class Inheritance {
         // Box box2 = new Box(3.4, 5.7, 27.5);
         // System.out.println(box2.l + " " + box2.w);
 
-        BoxWeight box3 = new Box(2.7,3.5,6.3);
+        BoxWeight box3 = new BoxWeight(2.7,3.5,6.3,50.4);
         System.out.println(box3.h + " " + box3.weight);
     }
 }
