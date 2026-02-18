@@ -82,8 +82,11 @@ public class LL {
     }
 
     int deleteAtIndex(int index){
-        if(size<=1){
+        if(index == 0){
             deleteFirst();
+        }
+        if(index == size-1){
+            deleteLast(); 
         }
 
         Node previous = get(index - 1);
@@ -92,6 +95,18 @@ public class LL {
         previous.next = temp;
         size--;
         return value;
+    }
+
+
+    Node find(int value){
+        Node temp = head;
+        while(temp != null){
+            if(temp.value == value){
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
 
     Node get(int index){

@@ -14,9 +14,9 @@ public class Main {
         list.insertAtLast(19);
         list.display();
         // list.insertAtIndex(14, 2);
-        list.deleteLast();
-        list.deleteLast();
-        list.deleteLast();
+        // list.deleteLast();
+        // list.deleteLast();
+        // list.deleteLast();
         list.display();
         list.deleteAtIndex(2);
         list.display();
