@@ -9,6 +9,10 @@ public class LL {
         this.size = 0;
     }
 
+    public int size(){
+        return size; 
+    }
+
     public void insertAtFirst(int val){
         Node node = new Node(val);
         node.next = head;
@@ -18,10 +22,6 @@ public class LL {
             tail = head;
         }
         size++;
-    }
-
-    public int size(){
-        return size; 
     }
 
     public void display() {
@@ -56,6 +56,37 @@ public class LL {
         temp.next = newNode;
         newNode.next = nextPointer;
         size++;
+    }
+
+    int deleteFirst(){
+        int value = head.value;
+        head = head.next;
+        if(head == null){
+            tail = null;
+        }
+        size--;
+        return value;
+    }
+
+    int deleteLast(){
+        if(size<=1){
+            deleteFirst();
+        }
+
+        Node secondLast = get(size - 2);
+        int value = tail.value;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+        return value;
+    }
+
+    Node get(int index){
+        Node temp = head;
+        for(int i = 0; i<index; i++){
+            temp = temp.next;
+        }
+        return temp;
     }
 
     class Node {
