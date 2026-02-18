@@ -18,5 +18,7 @@ public class Main {
         list.deleteLast();
         list.deleteLast();
         list.display();
+        list.deleteAtIndex(2);
+        list.display();
     }
 }
