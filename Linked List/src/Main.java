@@ -30,11 +30,20 @@ public class Main {
         // dll.insertAtFirst(5);
         // dll.insertAtLast(5);
         // dll.insertAtLast(2);
-        dll.insertAtLast(8);
-        dll.insertAtLast(1);
-        dll.insertAtLast(2);
-        dll.insertAtLast(4);
-        dll.insertAtLast(7);
-        dll.display();
+        // dll.insertAtLast(8);
+        // dll.insertAtLast(1);
+        // dll.insertAtLast(2);
+        // dll.insertAtLast(4);
+        // dll.insertAtLast(7);
+        // dll.display();
+
+
+        CLL cll = new CLL();
+        cll.insert(3);
+        cll.insert(6);
+        cll.insert(5);
+        cll.insert(4);
+        cll.insert(2);
+        cll.display();
     }
 }
