@@ -38,12 +38,20 @@ public class Main {
         // dll.display();
 
 
-        CLL cll = new CLL();
-        cll.insert(3);
-        cll.insert(6);
-        cll.insert(5);
-        cll.insert(4);
-        cll.insert(2);
-        cll.display();
+        // CLL cll = new CLL();
+        // cll.insert(3);
+        // cll.insert(6);
+        // cll.insert(5);
+        // cll.insert(4);
+        // cll.insert(2);
+        // cll.display();
+
+        LL ll = new LL();
+        ll.insertAtLast(1);
+        ll.insertAtLast(2);
+        ll.insertAtLast(3);
+        ll.insertAtLast(4);
+        ll.insertAtLast(5);
+        ll.display();
     }
 }

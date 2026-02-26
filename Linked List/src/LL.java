@@ -97,6 +97,20 @@ public class LL {
         return value;
     }
 
+    public Node oddEvenList(Node head) {
+        Node first = head;
+        Node second = head.next;
+        while(first.next != null){
+            first.next = first.next.next;
+            first = first.next;
+        }
+        first.next = second;
+        while(second.next != null){
+            second.next = second.next.next;
+            second = second.next;
+        }
+        return head;
+    }
 
     Node find(int value){
         Node temp = head;
