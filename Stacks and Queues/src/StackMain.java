@@ -7,10 +7,26 @@ public class StackMain {
         stack.push(58);
         stack.push(93);
 
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
+        // System.out.println(stack.pop());
+        // System.out.println(stack.pop());
+        // System.out.println(stack.pop());
 
-        System.out.println(stack.peek());
+        // System.out.println(stack.peek());
+
+
+        DynamicStack dStack = new DynamicStack(4);
+        
+        dStack.push(23);
+        dStack.push(23);
+        dStack.push(23);
+        dStack.push(23);
+        dStack.push(23);
+        dStack.push(23);
+        dStack.push(23);
+
+        System.out.println(dStack.pop());
+        System.out.println(dStack.pop());
+        System.out.println(dStack.pop());
+        System.out.println(dStack.pop());
     }
 }
