@@ -41,5 +41,7 @@ public class InBuiltExamples {
         // System.out.println(deque2.peekLast());
         // System.out.println(deque2.pollLast());
         // System.out.println(deque2.pollLast());
+
+        
     }
 }
