@@ -43,5 +43,10 @@ public class InBuiltExamples {
         // System.out.println(deque2.pollLast());
 
         
+
+        Deque<Integer> stack2 = new ArrayDeque<>();
+        System.out.println(stack2.peek());
+        
+        System.out.println(stack2.pop());
     }
 }
