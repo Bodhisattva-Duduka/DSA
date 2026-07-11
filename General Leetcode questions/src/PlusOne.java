@@ -1,22 +1,35 @@
-
+import java.util.*;
 public class PlusOne {
     public static void main(String[] args) {
-        int[] arr =  {9,9,9};
+        int[] arr =  {9,8,9};
         PlusOne obj = new PlusOne();
-        obj.plusOne(arr);
+        System.out.println(Arrays.toString(obj.plusOne(arr)));
+
     }
     public int[] plusOne(int[] digits) {
-        String s = "";
-        for (int i = 0; i < digits.length; i++) {
-            s = s + Integer.toString(digits[i]);
+        if(digits[digits.length - 1] < 9){
+            digits[digits.length - 1] = digits[digits.length - 1] + 1;
+            return digits;
+        } else {
+            for(int i = digits.length - 1; i>=0; i--){
+                if(digits[i] == 9){
+                    digits[i] = 0;
+                }else {
+                    digits[i] = digits[i] + 1;
+                }
+            }
         }
-        int toInt = Integer.parseInt(s) + 1;
-        String str = Integer.toString(toInt);
-        int[] ans = new int[str.length()];
-        for (int i = 0; i < ans.length; i++) {
-            String strNum = str.valueOf(str.charAt(i));
-            ans[i] = Integer.parseInt(strNum);
+        System.out.println(Arrays.toString(digits));
+        if(digits[0] == 0){
+            int[] ans = new int[digits.length + 1];
+            for(int i = digits.length - 1; i>=0; i--){
+                ans[i + 1] = digits[i];
+            }
+            ans[0] = 1;
+            Arrays.toString(ans);
+            return ans;
+        } else {
+            return digits;
         }
-        return ans;
     }
 }
