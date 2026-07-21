@@ -31,5 +31,6 @@ public class CyclicSort {
                 break;
             }
         }
+        System.out.println(f);
     }
 }
