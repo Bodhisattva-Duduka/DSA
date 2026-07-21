@@ -19,7 +19,7 @@ public class CountingSort {
         int[] ans = new int[arr.length];
         int j = 0;
         for (int i = 0; i < countArr.length; i++) {
-            while (countArr[i] != 0) {
+            while (countArr[i] > 0) {
                 ans[j] = i;
                 countArr[i]--;
                 j++;
